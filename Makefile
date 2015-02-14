@@ -4,7 +4,7 @@ PRODUCT=unix_server
 
 all:
 	mkdir -p build
-	cc main.c -o build/$(PRODUCT)
+	cc main.c $(CFLAGS) -o build/$(PRODUCT)
 
 check:
 	exec build/$(PRODUCT)
