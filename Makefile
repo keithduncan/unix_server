@@ -3,7 +3,11 @@ PRODUCT=unix_server
 .PHONY: all clean
 
 all:
-	cc main.c -o $(PRODUCT)
+	mkdir -p build
+	cc main.c -o build/$(PRODUCT)
+
+check:
+	exec build/$(PRODUCT)
 
 clean:
-	rm $(PRODUCT)
+	rm -r build
